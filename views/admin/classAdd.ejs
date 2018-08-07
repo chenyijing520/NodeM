@@ -1,0 +1,42 @@
+<% include header%>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#">分类管理</a>
+                </li>
+                <li class="active">添加栏目</li>
+            </ol>
+     <!-- 表单 -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+
+            <form action="/admin/classInsert" class="userForm" method="POST">
+                <div class="input-group classAdd">
+                    <span class="input-group-addon">分类名称</span>
+                    <input type="text" class="form-control" name="name">
+                </div>
+                <div class="input-group classAdd">
+                    <span class="input-group-addon">分类描述</span>
+                    <input type="text" class="form-control" name="description">
+                </div>
+                <div class="input-group classAdd">
+                    <span class="input-group-addon">分类排序</span>
+                    <input type="text" class="form-control" name="order">
+                </div>
+                <div class="input-group classAdd">
+                    <input type="submit">
+                </div>
+            </form>
+
+
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+</div>
+<!-- 表单 end -->
+
+
+
+    <% include footer%>

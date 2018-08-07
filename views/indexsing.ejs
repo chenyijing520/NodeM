@@ -1,0 +1,38 @@
+<%include head%>
+    <% data.forEach(function(val){%>
+
+        <div class='row'>
+            <div class='col-md-2'></div>
+            <div class='col-md-8'>
+                <div class="jumbotron">
+                    <div class='row'>
+                        <div class='col-md-6'>
+                            <img src="/<%=val.imgurl%>" alt="">
+                            <h2>
+                                <%=val.name%>
+                            </h2>
+
+                        </div>
+                        <div class='col-md-6'>
+                            <h1><%=val.name%></h1>
+                            <span>演唱：<%=val.sing%></span><br>
+                            <span>作词：<%-val.compose%></span>
+                            
+                        </div>
+                        <div class='col-md-12'>
+                            <h5>
+                                <%-val.content%>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+            <div class='col-md-2'></div>
+        </div>
+        <%})%>
+            <%include foot%>

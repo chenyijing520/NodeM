@@ -1,0 +1,64 @@
+<% include header%>
+<!-- 引入 富文本编辑器 -->
+<script src="/ueditor/ueditor.config.js"></script>
+<script src="/ueditor/ueditor.all.min.js"></script>
+    <ol class="breadcrumb">
+        <li>
+            <a href="#">歌单管理</a>
+        </li>
+        <li class="active">添加歌单</li>
+    </ol>
+    <!-- 表单 -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+
+                <form action="/admin/articleInsert" class="userForm" method="POST" enctype="multipart/form-data">
+                    <div class="input-group classAdd">
+                        <span class="input-group-addon">歌单名称</span>
+                        <input type="text" class="form-control" name="name">
+                    </div>
+                    <div class="input-group classAdd">
+                        <span class="input-group-addon">上传封面</span>
+                        <input type="file" class="form-control" name="imgurl">
+                    </div>
+                    <div class="input-group classAdd">
+                        <span class="input-group-addon">歌曲分类</span>
+                        <select name="classId" class='form-control'>
+
+                            <% datalist.forEach(function(val){ %>
+                                <option value="<%=val._id%>">
+                                    <%= val.name%>
+                                </option>
+                                <%})%>
+                        </select>
+                    </div>
+                    <div class="input-group classAdd">
+                        <span class="input-group-addon"> &#160; 演 唱 者 </span>
+                        <input type="text" class="form-control" name="sing">
+                    </div>
+                    <div class="input-group classAdd">
+                        <span class="input-group-addon"> 作 &#160; &#160; 曲 </span>
+                        <input type="text" class="form-control" name="compose">
+                    </div>
+                    <div class="input-group classAdd">
+                        <textarea name="content" id="content"></textarea>
+                    </div>
+                    <div class="input-group classAdd">
+                        <input type="submit">
+                    </div>
+
+                </form>
+
+
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+    <!-- 表单 end -->
+ <script>
+            // 实例化编辑器
+            var ue = UE.getEditor('content');
+        </script>
+    <% include footer%>

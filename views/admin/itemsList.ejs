@@ -1,0 +1,32 @@
+<% include header %>		
+<ol class="breadcrumb">
+    <li>
+        <a href="#">栏目管理</a>
+    </li>
+    <li class="active">栏目列表</li>
+</ol>
+<table class='table'>
+    <tr>
+        <th>栏目名称</th>
+        <th>时间</th>
+        <th>栏目描述</th>
+        <th>栏目排序</th>
+        <th>操作</th>
+    </tr>
+    <% listdata.forEach(function(val){ %>
+    
+        <tr>
+            <td><%=val.name %></td>
+            <td><%= val.ctime.toLocaleString() %></td>
+            <td><%=val.description %></td>
+            <td><%= val.order %></td>
+            <td>
+                <a href="/admin/itemEdit/<%=val._id %>">修改</a>|
+                <a href="/admin/itemDel/<%=val._id %>" onclick="return confirm('是否删除')")>删除</a>
+            </td>
+        </tr>
+        <% }) %>
+</table>
+
+
+<% include footer %>	

@@ -1,0 +1,30 @@
+<% include header%>
+    <table class="table table-hover">
+        <tr>
+            <th>排序</th>
+            <th>分类名称</th>
+            <th>时间</th>
+            <th>操作</th>
+        </tr>
+
+        <% dataList.forEach(function(val){ %>
+            <tr>
+                <td>
+                    <%= val.order%>
+                </td>
+                <td>
+                    <%= val.name%>
+                </td>
+                <td>
+                    <%= val.ctime.toLocaleString() %>
+                </td>
+                <td>
+                    <a href="/admin/classEdit/<%=val._id %>">修改</a>/
+                     <a href="/admin/classDel/<%=val._id %>">删除</a>
+                    
+                </td>
+            </tr>
+            <% })%>
+
+    </table>
+    <% include footer%>

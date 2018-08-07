@@ -1,0 +1,21 @@
+<%include head%>
+<div class='indexlist'> <span class="label label-danger">华语</span></div>
+   
+   <div class="row">
+            <% data1.forEach(function(val){ %> 
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="/<%=val.imgurl%>">
+                    <div class="caption">
+                        <h3><%=val.name%>></h3>
+                        <p><%=val.sing%>></p>
+                        <p>
+                            <a href="/indexsing/<%= val._id %>" class="btn btn-default" role="button">详情</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+   
+    <%})%>
+</div>
+        <%include foot%>

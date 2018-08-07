@@ -1,0 +1,59 @@
+<% include header%>
+<!-- 引入 富文本编辑器 -->
+<script src="/ueditor/ueditor.config.js"></script>
+<script src="/ueditor/ueditor.all.min.js"></script>
+    <ol class="breadcrumb">
+        <li>
+            <a href="#">歌单管理</a>
+        </li>
+        <li class="active">修改歌单</li>
+    </ol>
+    <!-- 表单 -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+
+                <form action="/admin/articleUp" class="userForm" method="POST">
+                    <input type="hidden" name='_id' value='<%=datalist._id%>'>
+                    <div class="input-group classAdd">
+                        <span class="input-group-addon">歌单名称</span>
+                        <input type="text" class="form-control" name="name" value='<%=datalist.name%>'>
+                    </div>
+                    <div class="input-group classAdd">
+                        <span class="input-group-addon">歌曲分类</span>
+                        <select name="classId" class='form-control'>
+
+                            <% data1.forEach(function(val){ %>
+                                <option value="<%= val._id%>" <%= val._id.toString()==datalist.classId?'selected':''%>><%= val.name%></option>
+                                <%})%>
+                        </select>
+                    </div>
+                    <div class="input-group classAdd">
+                        <span class="input-group-addon"> &#160; 演 唱 者 </span>
+                        <input type="text" class="form-control" name="sing" value='<%=datalist.sing%>'>
+                    </div>
+                    <div class="input-group classAdd">
+                        <span class="input-group-addon"> 作 &#160; &#160; 曲 </span>
+                        <input type="text" class="form-control" name="compose" value='<%=datalist.compose%>'>
+                    </div>
+                    <div class="input-group classAdd">
+                        <textarea name="content" id="content"> <%=datalist.content%></textarea>
+                    </div>
+                    <div class="input-group classAdd">
+                        <input type="submit">
+                    </div>
+
+                </form>
+
+
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+    <!-- 表单 end -->
+ <script>
+            // 实例化编辑器
+            var ue = UE.getEditor('content');
+        </script>
+    <% include footer%>

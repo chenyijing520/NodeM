@@ -1,0 +1,29 @@
+<% include header%>
+<ol class="breadcrumb">
+    <li>
+        <a href="#">文章管理</a>
+    </li>
+    <li class="active">更换封面</li>
+</ol>
+<div class='container'>
+    <div class='row'>
+        <form action="/admin/imgUp" class="userForm imgEdit" method="POST" enctype="multipart/form-data">
+           <input type="hidden" value="<%=data._id%>" name="_id">
+           <div class="col-md-2">
+             <img src="/<%= data.imgurl %>">
+            </div>
+            <div class="col-md-10">
+                <div class="input-group">
+                    <span class="input-group-addon">上传封面</span>
+                   
+                    <input type="file" class="form-control" name="imgurl" >
+                </div>
+            </div>
+            <div class="col-md-10">
+                <input type="submit" class="submit">     
+         </div>
+           
+        </form>
+    </div>
+    </div>
+<% include footer%>

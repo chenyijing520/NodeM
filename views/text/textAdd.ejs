@@ -1,0 +1,29 @@
+<% include ../admin/header %>
+<div class='row'>
+    <div class='col-md-4'></div>
+    <div class='col-md-4'>
+        <div class='textAdd'>
+            <form action="/text/textInsert" class="userForm" method="POST">
+                <div class="input-group">
+                    <span class="input-group-addon">账号</span>
+                    <input type="text" class="form-control" name="username">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">密码</span>
+                    <input type="password" class="form-control" name="password">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">电话</span>
+                    <input type="text" class="form-control" name="tel">
+                </div>
+                <div class="input-group">
+                    <input type="submit">
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <div class='col-md-4'></div>
+</div>
+
+<% include ../admin/footer%>

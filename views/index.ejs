@@ -1,0 +1,28 @@
+<% include header%>
+
+<div class="container">
+        <div class="row">
+            <%classlist.forEach(function(val){ %>
+              <div class="col-md-4">
+                <div class="panel panel-default">
+                  <div class="panel-heading"><%=val.name%></div>
+                  <div class="panel-body">
+                    <ul>
+                      <% val.articleList.forEach(function(val1){ %>
+                           <li>
+                               <img src="/<%=val1.imgurl%>" class='imgindex'>
+                               
+                               <%=val1.name%>
+                            </li>
+      
+                      <% })%>
+                     
+                    </ul>
+                  </div>
+                </div>          
+              </div>
+            <%})%>
+        </div>
+      </div>
+      
+<% include footer%>

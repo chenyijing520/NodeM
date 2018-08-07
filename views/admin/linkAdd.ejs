@@ -1,0 +1,36 @@
+<% include header%>
+<ol class="breadcrumb">
+    <li>
+        <a href="#">友链管理</a>
+    </li>
+    <li class="active">添加友链</li>
+</ol>
+<!-- 表单 -->
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+
+            <form action="/admin/linkInsert" class="userForm" method="POST">
+                <div class="input-group">
+                    <span class="input-group-addon">链接名称</span>
+                    <input type="text" class="form-control" name="name">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">链接介绍</span>
+                    <input type="text" class="form-control" name="description">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">链接排序</span>
+                    <input type="text" class="form-control" name="order">
+                </div>
+                <div class="input-group">
+                    <input type="submit">
+                </div>
+            </form>
+
+
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+<!-- 表单 end -->
+<% include footer%>
